@@ -12,13 +12,11 @@ McSlappysActionFile = '{}/slapActions.txt'.format(dirName)
 
 def slap(word, word_eol, userdata):
     global McSlappysActions
-    nick2Slap = word[1]
-    
+    nick2Slap = word[1]    
     msgpick = choice(McSlappysActions)
     nick2SlapBold = '{}'.format(nick2Slap)
     olSlappyCMD = msgpick.strip().format(nick2SlapBold)
     hexchat.command(olSlappyCMD)
-
     return hexchat.EAT_ALL
  
 def reloadMcSlappy(word, word_eol, userdata):

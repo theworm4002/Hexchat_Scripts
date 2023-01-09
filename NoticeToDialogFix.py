@@ -4,7 +4,7 @@ import hexchat
 
 __module_name__ = "NoticeToDialogFix"
 __module_version__ = "0.0.1"
-__module_description__ = "Catches any DM NOTICE and makes it go to it's own Dialog window"
+__module_description__ = "Catches any DM NOTICE and makes it go to its own Dialog window"
 
 # If you only want this to work on a single network
 networkName = 'Rizon'

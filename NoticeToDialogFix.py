@@ -23,17 +23,7 @@ def servNotice(word, word_eol, userdata):
     if networkName != '' and hexchat.get_info('network') != networkName: return hexchat.EAT_NONE
     ircmsg = word_eol[0]
 
-    if ' WALLOPS :' in ircmsg or ' LOCOPS :' in ircmsg:
-        # ':[Nick]!~[hostname]@[IPAddress] WALLOPS :[message]'
-        msgSplit = ircmsg.split(' ',2)
-        fullFrom = msgSplit[0]
-        fromName = fullFrom.split('!',1)[0][1:]
-        cmd = msgSplit[1]
-        if cmd != 'WALLOPS' or cmd != 'LOCOPS' : return hexchat.EAT_NONE        
-        hexchat.command('query {}'.format(fromName))
-        return hexchat.EAT_NONE        
-
-    elif ' NOTICE ' in ircmsg:
+    if ' NOTICE ' in ircmsg:
         # ':[Nick]!~[hostname]@[IPAddress] NOTICE [channel] :[message]'
         msgSplit = ircmsg.split(' ',3)
         fullFrom = msgSplit[0]
